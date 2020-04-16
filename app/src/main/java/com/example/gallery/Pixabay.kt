@@ -1,6 +1,8 @@
 package com.example.gallery
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
 data class Pixabay(
     val totalhits:Int,
@@ -28,8 +30,8 @@ data class Pixabay(
     }
 }
 
-data class PhotoItem(
+@Parcelize data class PhotoItem(
     @SerializedName("id") val photoID:Int,
     @SerializedName("webformatURL")val previewUrl:String, //json中的标注,把原来的名称作为序列化的名称，把变量名称改为符合语法的名称
     @SerializedName("largeImageURL")val fullURL:String
-)
+):Parcelable
